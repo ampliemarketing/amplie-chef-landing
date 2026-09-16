@@ -14,7 +14,7 @@ const karla = Karla({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://ampliechef.com.br";
+const siteUrl = "https://amplie-chef-amplie-chef-site.sxelg2.easypanel.host";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -73,8 +73,8 @@ const STEPS = [
   },
 ];
 
-const WHATSAPP_NUMBER = "5500000000000"; // TODO: substituir pelo número real do WhatsApp comercial
-const CONTACT_EMAIL = "contato@ampliechef.com.br"; // TODO: confirmar e-mail comercial
+const WHATSAPP_NUMBER = "55 64 9286-4648"; 
+const CONTACT_EMAIL = "brunoleao.ceo@gmail.com"; 
 
 export default function Home() {
   return (
