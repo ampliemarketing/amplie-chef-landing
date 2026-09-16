@@ -1,5 +1,10 @@
+import Image from "next/image";
+
+import { PricingSection } from "@/components/PricingSection";
+
 const NAV_LINKS = [
   { href: "#recursos", label: "Recursos" },
+  { href: "#planos", label: "Planos" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#contato", label: "Contato" },
 ];
@@ -98,34 +103,48 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pt-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-amber-800">
-              Gestão para cafeterias e restaurantes
-            </p>
-            <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-stone-900 md:text-5xl">
-              Um só sistema para cardápio, PDV, caixa e cozinha
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-              O Amplie Chef organiza a operação do seu restaurante ou cafeteria do
-              pedido à nota fiscal — mesas, delivery, cozinha, caixa e estoque em
-              um só lugar.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full rounded-full bg-amber-800 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-amber-900 sm:w-auto"
-              >
-                Agendar demonstração
-              </a>
-              <a
-                href="#recursos"
-                className="w-full rounded-full border border-stone-300 px-8 py-3.5 text-center text-sm font-semibold text-stone-800 transition hover:border-amber-800 hover:text-amber-900 sm:w-auto"
-              >
-                Ver recursos
-              </a>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/comida.png"
+              alt=""
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-stone-950/85 via-stone-950/70 to-[#F6F1EA]" />
+          </div>
+
+          <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-28">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-amber-300">
+                Gestão para cafeterias e restaurantes
+              </p>
+              <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+                Um só sistema para cardápio, PDV, caixa e cozinha
+              </h1>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-200">
+                O Amplie Chef organiza a operação do seu restaurante ou cafeteria do
+                pedido à nota fiscal — mesas, delivery, cozinha, caixa e estoque em
+                um só lugar.
+              </p>
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full rounded-full bg-amber-800 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-amber-900 sm:w-auto"
+                >
+                  Agendar demonstração
+                </a>
+                <a
+                  href="#planos"
+                  className="w-full rounded-full border border-white/50 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                >
+                  Ver planos
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -159,6 +178,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <PricingSection />
 
         <section id="como-funciona" className="py-20">
           <div className="mx-auto max-w-6xl px-6">
