@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: "#recursos", label: "Recursos" },
   { href: "#planos", label: "Planos" },
   { href: "#como-funciona", label: "Como funciona" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -73,7 +74,40 @@ const STEPS = [
   },
 ];
 
-const WHATSAPP_NUMBER = "55 64 9286-4648"; 
+const FAQS = [
+  {
+    question: "Preciso instalar algum programa no computador?",
+    answer:
+      "Não. O Amplie Chef roda direto no navegador — computador, tablet ou celular — sem instalação.",
+  },
+  {
+    question: "Funciona sem internet?",
+    answer:
+      "Não. É um sistema em nuvem, então PDV, caixa, cozinha e cardápio online precisam de conexão com a internet para operar.",
+  },
+  {
+    question: "Como funciona a impressão do cupom?",
+    answer:
+      "A impressão é feita pelo navegador, sem exigir uma impressora fiscal ou protocolo ESC/POS específico.",
+  },
+  {
+    question: "A nota fiscal (NFC-e) é emitida automaticamente?",
+    answer:
+      "No plano Plus, a emissão de NFC-e é feita via integração com a Brasil NFe, com disparo manual pelo operador.",
+  },
+  {
+    question: "O pagamento do pedido online é confirmado automaticamente?",
+    answer:
+      "O cliente escolhe Pix, cartão ou pagamento na entrega no cardápio online, mas a confirmação automática via gateway de pagamento ainda está em desenvolvimento — hoje a conciliação é manual.",
+  },
+  {
+    question: "O aviso de status do pedido no WhatsApp é automático?",
+    answer:
+      "Sim, no plano Plus, mas depende de uma conta Z-API própria do restaurante, contratada à parte.",
+  },
+];
+
+const WHATSAPP_NUMBER = "55 64 9286-4648";
 const CONTACT_EMAIL = "brunoleao.ceo@gmail.com"; 
 
 export default function Home() {
@@ -118,7 +152,7 @@ export default function Home() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-violet-950/85 via-purple-950/75 to-[#F8F4FB]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-[#F8F4FB]" />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-28">
@@ -211,10 +245,35 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="contato"
-          className="border-t border-stone-200/80 bg-gradient-to-r from-violet-950 via-fuchsia-800 to-pink-700 py-20"
-        >
+        <section id="faq" className="border-t border-stone-200/80 bg-white/50 py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="text-center">
+              <h2 className="font-serif text-3xl font-bold text-stone-900">
+                Perguntas frequentes
+              </h2>
+            </div>
+            <div className="mt-10 flex flex-col gap-3">
+              {FAQS.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="group rounded-xl border border-stone-200 bg-[#F8F4FB] px-5 py-4 open:border-fuchsia-700/40"
+                >
+                  <summary className="cursor-pointer list-none font-serif text-base font-bold text-stone-900 marker:content-none">
+                    <span className="flex items-center justify-between gap-4">
+                      {faq.question}
+                      <span className="shrink-0 text-fuchsia-700 transition group-open:rotate-45">
+                        +
+                      </span>
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-stone-600">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contato" className="border-t border-stone-200/80 bg-fuchsia-900 py-20">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-serif text-3xl font-bold text-white">
               Pronto para organizar a operação do seu restaurante?
