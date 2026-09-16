@@ -79,14 +79,19 @@ const CONTACT_EMAIL = "brunoleao.ceo@gmail.com";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#F6F1EA]/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#F8F4FB]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="font-serif text-lg font-bold tracking-tight text-amber-900">
-            Amplie Chef
-          </span>
+          <Image
+            src="/logo-amplie-chef.png"
+            alt="Amplie Chef"
+            width={660}
+            height={233}
+            className="h-8 w-auto"
+            priority
+          />
           <nav className="hidden items-center gap-8 text-sm font-medium text-stone-700 md:flex">
             {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-amber-900">
+              <a key={link.href} href={link.href} className="hover:text-fuchsia-700">
                 {link.label}
               </a>
             ))}
@@ -95,7 +100,7 @@ export default function Home() {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-amber-800 px-5 py-2 text-sm font-semibold text-white transition hover:bg-amber-900"
+            className="rounded-full bg-fuchsia-700 px-5 py-2 text-sm font-semibold text-white transition hover:bg-fuchsia-800"
           >
             Falar com a gente
           </a>
@@ -113,12 +118,12 @@ export default function Home() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-stone-950/85 via-stone-950/70 to-[#F6F1EA]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-violet-950/85 via-purple-950/75 to-[#F8F4FB]" />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-28">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-amber-300">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-pink-300">
                 Gestão para cafeterias e restaurantes
               </p>
               <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
@@ -134,7 +139,7 @@ export default function Home() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-full bg-amber-800 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-amber-900 sm:w-auto"
+                  className="w-full rounded-full bg-fuchsia-700 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-fuchsia-800 sm:w-auto"
                 >
                   Agendar demonstração
                 </a>
@@ -165,7 +170,7 @@ export default function Home() {
               {FEATURES.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-stone-200 bg-[#F6F1EA] p-6 transition hover:border-amber-800/40 hover:shadow-sm"
+                  className="rounded-2xl border border-stone-200 bg-[#F8F4FB] p-6 transition hover:border-fuchsia-700/40 hover:shadow-sm"
                 >
                   <h3 className="font-serif text-base font-bold text-stone-900">
                     {feature.title}
@@ -191,7 +196,7 @@ export default function Home() {
             <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3">
               {STEPS.map((step) => (
                 <div key={step.number} className="text-center">
-                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-800 font-serif text-lg font-bold text-white">
+                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-700 font-serif text-lg font-bold text-white">
                     {step.number}
                   </span>
                   <h3 className="mt-5 font-serif text-lg font-bold text-stone-900">
@@ -206,12 +211,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contato" className="border-t border-stone-200/80 bg-amber-900 py-20">
+        <section
+          id="contato"
+          className="border-t border-stone-200/80 bg-gradient-to-r from-violet-950 via-fuchsia-800 to-pink-700 py-20"
+        >
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-serif text-3xl font-bold text-white">
               Pronto para organizar a operação do seu restaurante?
             </h2>
-            <p className="mt-4 text-amber-100">
+            <p className="mt-4 text-pink-100">
               Fale com a gente e conheça o Amplie Chef de perto.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -219,7 +227,7 @@ export default function Home() {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-full bg-white px-8 py-3.5 text-center text-sm font-semibold text-amber-900 shadow-sm transition hover:bg-amber-50 sm:w-auto"
+                className="w-full rounded-full bg-white px-8 py-3.5 text-center text-sm font-semibold text-fuchsia-800 shadow-sm transition hover:bg-pink-50 sm:w-auto"
               >
                 Chamar no WhatsApp
               </a>
@@ -236,7 +244,13 @@ export default function Home() {
 
       <footer className="border-t border-stone-200/80 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-stone-500 md:flex-row">
-          <span className="font-serif font-bold text-stone-700">Amplie Chef</span>
+          <Image
+            src="/logo-amplie-chef.png"
+            alt="Amplie Chef"
+            width={660}
+            height={233}
+            className="h-6 w-auto opacity-80"
+          />
           <span>© {new Date().getFullYear()} Amplie Chef. Todos os direitos reservados.</span>
         </div>
       </footer>

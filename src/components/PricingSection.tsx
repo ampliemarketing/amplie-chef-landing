@@ -8,14 +8,14 @@ const PLAN_STYLES: Record<PlanId, { bar: string; badge: string; check: string }>
     check: "text-stone-500",
   },
   pro: {
-    bar: "bg-amber-800",
-    badge: "bg-amber-800/10 text-amber-900",
-    check: "text-amber-800",
+    bar: "bg-fuchsia-700",
+    badge: "bg-fuchsia-700/10 text-fuchsia-800",
+    check: "text-fuchsia-700",
   },
   plus: {
-    bar: "bg-[#93671E]",
-    badge: "bg-[#93671E]/10 text-[#7A5518]",
-    check: "text-[#93671E]",
+    bar: "bg-pink-600",
+    badge: "bg-pink-600/10 text-pink-700",
+    check: "text-pink-600",
   },
 };
 
@@ -57,7 +57,7 @@ export function PricingSection() {
                 key={plan.id}
                 className={`relative flex flex-col gap-5 rounded-2xl border bg-white p-7 ${
                   plan.id === "pro"
-                    ? "border-amber-800/50 shadow-md"
+                    ? "border-fuchsia-700/50 shadow-md"
                     : "border-stone-200 shadow-sm"
                 }`}
               >
@@ -112,8 +112,8 @@ export function PricingSection() {
                   href="#contato"
                   className={`mt-1 w-full rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
                     plan.id === "pro"
-                      ? "bg-amber-800 text-white hover:bg-amber-900"
-                      : "border border-stone-300 text-stone-800 hover:border-amber-800 hover:text-amber-900"
+                      ? "bg-fuchsia-700 text-white hover:bg-fuchsia-800"
+                      : "border border-stone-300 text-stone-800 hover:border-fuchsia-700 hover:text-fuchsia-800"
                   }`}
                 >
                   Falar sobre o {plan.name}
@@ -141,10 +141,10 @@ export function PricingSection() {
                   <th className="w-20 border-b border-stone-200 px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-stone-500">
                     Basic
                   </th>
-                  <th className="w-20 border-b border-stone-200 px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">
+                  <th className="w-20 border-b border-stone-200 px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-fuchsia-700">
                     Pro
                   </th>
-                  <th className="w-20 border-b border-stone-200 px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-[#93671E]">
+                  <th className="w-20 border-b border-stone-200 px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-pink-600">
                     Plus
                   </th>
                 </tr>
@@ -155,7 +155,7 @@ export function PricingSection() {
                     <tr>
                       <td
                         colSpan={4}
-                        className="border-y border-stone-100 bg-[#F6F1EA] px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-stone-500"
+                        className="border-y border-stone-100 bg-[#F8F4FB] px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-stone-500"
                       >
                         {group.category}
                       </td>
@@ -174,10 +174,10 @@ export function PricingSection() {
                           {row.basic ? <Check className="mx-auto text-stone-500" /> : <Dash />}
                         </td>
                         <td className="border-b border-stone-100 px-4 py-3 text-center align-top">
-                          {row.pro ? <Check className="mx-auto text-amber-800" /> : <Dash />}
+                          {row.pro ? <Check className="mx-auto text-fuchsia-700" /> : <Dash />}
                         </td>
                         <td className="border-b border-stone-100 px-4 py-3 text-center align-top">
-                          {row.plus ? <Check className="mx-auto text-[#93671E]" /> : <Dash />}
+                          {row.plus ? <Check className="mx-auto text-pink-600" /> : <Dash />}
                         </td>
                       </tr>
                     ))}
